@@ -1,0 +1,44 @@
+.Text-banner {
+  height: 100vh;
+
+  .grid {
+    display: grid;
+    grid-template-areas: 'stack';
+
+    .full-image {
+      grid-area: stack;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .text-rows {
+      overflow: hidden;
+      grid-area: stack;
+      display: flex;
+      flex-wrap: wrap;
+
+      .text-row {
+        display: flex;
+
+        &--one,
+        &--three {
+          transform: translate(calc(-100% + 100vw), 0);
+        }
+
+        &--two {
+          transform: translate(calc(0% + 100vw), 0);
+        }
+
+        .text {
+          align-self: center;
+          text-transform: uppercase;
+          font: 400 12rem/1 $heading-font;
+          white-space: nowrap;
+          letter-spacing: -0.01em;
+          color: transparentize($color: #fff, $amount: 0.2);
+        }
+      }
+    }
+  }
+}

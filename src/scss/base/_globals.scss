@@ -1,0 +1,24 @@
+.wrap {
+  @include wrap;
+}
+
+.agbalumo-regular {
+  font-family: $agbalumno-font;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.image-container {
+  position: relative;
+  padding-top: percentage(math.div(9, 16));
+  height: 0;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

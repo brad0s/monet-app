@@ -1,0 +1,6 @@
+@mixin wrap {
+  box-sizing: content-box;
+  max-width: $wrap;
+  padding-left: $wrap-padding;
+  padding-right: $wrap-padding;
+}
