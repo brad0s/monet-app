@@ -1,16 +1,26 @@
 .Fixed-icon {
   position: fixed;
-  bottom: 2rem;
-  right: 2em;
+  bottom: 1.25rem;
+  right: 1.25em;
   z-index: 10;
   mix-blend-mode: soft-light;
+
+  @include md {
+    bottom: 2rem;
+    right: 2em;
+  }
 
   .icon {
     font: 400 6rem/1 $heading-font;
   }
 
   svg {
-    width: 4rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
+
+    @include md {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 }
