@@ -26,12 +26,20 @@
     }
 
     .year {
-      font: italic 700 12rem/1.2 $heading-font;
+      font: italic 700 6rem/1.2 $heading-font;
       margin-bottom: 0.1em;
+
+      @include md {
+        font-size: 12px;
+      }
     }
 
     .content {
-      font: 400 2rem/1.5 $heading-font;
+      font: 400 1.5rem/1.5 $heading-font;
+
+      @include lg {
+        font-size: 2rem;
+      }
     }
 
     &:nth-child(4n + 1) {
