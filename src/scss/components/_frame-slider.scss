@@ -3,6 +3,7 @@
   background: white;
   display: grid;
   place-items: center;
+  width: 100%;
 
   .wrap {
     display: flex;
@@ -16,7 +17,17 @@
 
   .frame-container {
     position: relative;
-    max-width: 500px;
+    max-width: 100%;
+    width: 350px;
+
+    @include sm {
+      width: 500px;
+    }
+
+    @include md {
+      max-width: 500px;
+      width: 100%;
+    }
 
     .image-container {
       position: absolute;
@@ -34,12 +45,10 @@
         width: 100%;
         display: flex;
         flex-wrap: nowrap;
-        // gap: 30px;
       }
 
       .slide {
         position: relative;
-        // flex: 1;
         min-width: 100%;
         padding-right: 100%;
       }
@@ -47,13 +56,18 @@
   }
 
   .images-info {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: visible;
+    display: none;
+    // flex-wrap: nowrap;
+    // overflow: visible;
+
+    @include md {
+      display: flex;
+    }
 
     .slide-image-info {
       text-align: center;
-      min-width: 100%;
+      // min-width: 100%;
+      flex: 1 0 100vw;
 
       .name {
         font: 500 1rem/1.5 $heading-font;

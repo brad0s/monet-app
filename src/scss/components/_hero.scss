@@ -6,8 +6,13 @@
   overflow: hidden;
 
   .wrap {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include md {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
   }
 
   .image-contain {
@@ -42,23 +47,6 @@
       width: 100%;
       pointer-events: none;
     }
-
-    // .image {
-    //   inset: unset;
-    //   position: absolute;
-    //   width: 50%;
-    //   pointer-events: none;
-
-    //   &--p1 {
-    //     top: 0rem;
-    //     left: 0rem;
-    //   }
-
-    //   &--p2 {
-    //     top: 0rem;
-    //     right: 0rem;
-    //   }
-    // }
   }
 
   .images-width-container {
@@ -70,7 +58,15 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    font: italic 400 14rem/1 $heading-font;
+    font: italic 400 3.5rem/1 $heading-font;
     letter-spacing: -0.03em;
+
+    @include md {
+      font-size: 7rem;
+    }
+
+    @include lg {
+      font-size: 14rem;
+    }
   }
 }
