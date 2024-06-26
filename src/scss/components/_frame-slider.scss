@@ -56,13 +56,18 @@
   }
 
   .images-info {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: visible;
+    display: none;
+    // flex-wrap: nowrap;
+    // overflow: visible;
+
+    @include md {
+      display: flex;
+    }
 
     .slide-image-info {
       text-align: center;
-      min-width: 100%;
+      // min-width: 100%;
+      flex: 1 0 100vw;
 
       .name {
         font: 500 1rem/1.5 $heading-font;
