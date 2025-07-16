@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    min-width: 0;
   }
 
   img {
@@ -56,7 +58,9 @@
   }
 
   .images-info {
-    display: none;
+    // display: none;
+    display: flex;
+    align-self: flex-start;
     // flex-wrap: nowrap;
     // overflow: visible;
 
@@ -68,6 +72,7 @@
       text-align: center;
       // min-width: 100%;
       flex: 1 0 100vw;
+      padding: 0 24px;
 
       .name {
         font: 500 1rem/1.5 $heading-font;
