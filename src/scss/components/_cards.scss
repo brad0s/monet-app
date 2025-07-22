@@ -1,5 +1,6 @@
 .Cards {
   height: 100vh;
+  overflow: hidden;
 
   .cards-list {
     position: relative;
@@ -46,14 +47,17 @@
       background: #cdd7f4;
       color: #122454;
     }
+
     &:nth-child(4n + 2) {
       background: #bbddd2;
       color: #1b362e;
     }
+
     &:nth-child(4n + 3) {
       background: #fde7c4;
       color: #8a5705;
     }
+
     &:nth-child(4n + 4) {
       background: #ffd6e7;
       color: #a30041;

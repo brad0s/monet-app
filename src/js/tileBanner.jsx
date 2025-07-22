@@ -6,9 +6,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const TileBanner = () => {
+  const numTiles = 49;
   const tiles = [];
-  for (let i = 0; i < 100; i++) {
-    tiles.push(<div className='tile' key={i}></div>);
+  for (let i = 0; i < numTiles; i++) {
+    tiles.push(
+      <div
+        className='tile'
+        key={i}
+      ></div>
+    );
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -24,14 +30,12 @@ export const TileBanner = () => {
       duration: 1,
       scale: 0,
       y: 60,
-      // yoyo: true,
-      // repeat: 1,
       ease: 'power1.inOut',
       stagger: {
         amount: 1.5,
         each: 0.1,
         from: 'random',
-        grid: [10, 10],
+        grid: [7, 7],
         ease: 'power2.inOut',
       },
     });
@@ -39,7 +43,11 @@ export const TileBanner = () => {
 
   return (
     <div className='Tile-banner'>
-      <img className='full-image' src={imgUrl} alt='artwork' />
+      <img
+        className='full-image'
+        src={imgUrl}
+        alt='artwork'
+      />
       <div className='tile-grid'>{tiles}</div>
     </div>
   );
