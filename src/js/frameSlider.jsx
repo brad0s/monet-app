@@ -19,11 +19,11 @@ export const FrameSlider = () => {
     let slides = gsap.utils.toArray('.Frame-slider .slide');
     let details = gsap.utils.toArray('.Frame-slider .slide-image-info');
 
-    console.log({
-      height: window.innerHeight,
-      length: slides.length,
-      total: window.innerHeight * slides.length,
-    });
+    // console.log({
+    //   height: window.innerHeight,
+    //   length: slides.length,
+    //   total: window.innerHeight * slides.length,
+    // });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -34,7 +34,11 @@ export const FrameSlider = () => {
         scrub: 1,
         ease: 'none',
         // markers: true,
-        snap: 1 / (slides.length - 1),
+        snap: {
+          snapTo: 1 / (slides.length - 1),
+          duration: { min: 0.2, max: 0.5 },
+          delay: 0.2,
+        },
       },
     });
 
@@ -55,14 +59,23 @@ export const FrameSlider = () => {
     <div className='Frame-slider'>
       <div className='wrap'>
         <div className='frame-container'>
-          <img src={frameUrl} alt='frame' />
+          <img
+            src={frameUrl}
+            alt='frame'
+          />
           <div className='image-container'>
             <div className='slides-wrapper'>
               {slides.map((slide, index) => {
                 const { image } = slide;
                 return (
-                  <div className='slide' data-index={index}>
-                    <img src={getImageUrl(image)} alt='art' />
+                  <div
+                    className='slide'
+                    data-index={index}
+                  >
+                    <img
+                      src={getImageUrl(image)}
+                      alt='art'
+                    />
                   </div>
                 );
               })}
@@ -73,7 +86,10 @@ export const FrameSlider = () => {
           {slides.map((slide, index) => {
             const { date, name } = slide;
             return (
-              <div className='slide-image-info' data-index={index}>
+              <div
+                className='slide-image-info'
+                data-index={index}
+              >
                 <p className='name'>{name}</p>
                 <p className='date'>{date}</p>
               </div>
